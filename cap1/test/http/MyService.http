@@ -1,0 +1,42 @@
+@server=http://localhost:34231
+@username=alice
+@password=
+
+
+### User
+# @name User_GET
+GET {{server}}/odata/v4/my/Getdata(ID='asd',Name='se')
+Authorization: Basic {{username}}:{{password}}
+
+
+### User
+# @name User_POST
+POST {{server}}/odata/v4/my/User
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "62809886-0d5c-4afb-9461-c28ea12e1c9a",
+  "Name": "test1",
+  "Email": "test1@gamil.com"
+}
+
+
+### User
+# @name User_PATCH
+PATCH {{server}}/odata/v4/my/User/62809886-0d5c-4afb-9461-c28ea12e1c9a
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "62809886-0d5c-4afb-9461-c28ea12e1c9a",
+  "Name": "Name-6280988",
+  "Email": "Email-6280988"
+}
+
+
+### User
+# @name User_DELETE
+DELETE {{server}}/odata/v4/my/User/62809886-0d5c-4afb-9461-c28ea12e1c9a
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
